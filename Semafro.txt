@@ -1,0 +1,28 @@
+//Variavel
+int pin_ledV=4;
+int pin_ledA=12;
+int pin_ladRed=13;
+
+void setup() {
+  // put your setup code here, to run once:
+  //Configura o pino especificado para funcionar como uma entrada ou saída.
+pinMode(pin_ledV, OUTPUT);
+pinMode(pin_ledA, OUTPUT);
+pinMode(pin_ladRed, OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  digitalWrite(pin_ledV, HIGH);
+  delay(3000);
+  digitalWrite(pin_ledV,LOW);
+  digitalWrite(pin_ledA, HIGH);
+  delay(1000);
+  digitalWrite(pin_ledA, LOW);
+  digitalWrite(pin_ladRed, HIGH);
+  delay(2000);
+  digitalWrite(pin_ladRed,LOW);
+
+
+
+}
