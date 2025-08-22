@@ -1,0 +1,60 @@
+int pin_ledVerde = 10;
+int pin_ledAmarelo = 8;
+int pin_ledVermelho = 6;
+int pin_ledRosa = 4;
+int pin_ledLaranja = 2;
+int pin_pot = 0;  
+int valor_pot = 0;
+
+void setup() {
+  pinMode(pin_ledVerde, OUTPUT);
+  pinMode(pin_ledAmarelo, OUTPUT);
+  pinMode(pin_ledVermelho, OUTPUT);
+  pinMode(pin_ledRosa, OUTPUT);
+  pinMode(pin_ledLaranja, OUTPUT);
+}
+
+void loop() {
+  valor_pot = analogRead(pin_pot);
+
+  //Serial.print("Valor do potenciometro: ");
+  Serial.println(valor_pot); // Mostra o valor no monitor serial
+
+  if (valor_pot < 20) {
+    digitalWrite(pin_ledVerde, HIGH);
+    digitalWrite(pin_ledAmarelo, LOW);
+    digitalWrite(pin_ledVermelho, LOW);
+    digitalWrite(pin_ledRosa, LOW);
+    digitalWrite(pin_ledLaranja, LOW);
+  } 
+  else if (valor_pot < 40) {
+    digitalWrite(pin_ledVerde, LOW);
+    digitalWrite(pin_ledAmarelo, HIGH);
+    digitalWrite(pin_ledVermelho, LOW);
+    digitalWrite(pin_ledRosa, LOW);
+    digitalWrite(pin_ledLaranja, LOW);
+  }
+  else if (valor_pot < 60) {
+    digitalWrite(pin_ledVerde, LOW);
+    digitalWrite(pin_ledAmarelo, LOW);
+    digitalWrite(pin_ledVermelho, HIGH);
+    digitalWrite(pin_ledRosa, LOW);
+    digitalWrite(pin_ledLaranja, LOW);
+  }
+  else if (valor_pot < 80) {
+    digitalWrite(pin_ledVerde, LOW);
+    digitalWrite(pin_ledAmarelo, LOW);
+    digitalWrite(pin_ledVermelho, LOW);
+    digitalWrite(pin_ledRosa, HIGH);
+    digitalWrite(pin_ledLaranja, LOW);
+  }
+  else if (valor_pot <= 100) {  // Usar <= para incluir o valor máximo
+    digitalWrite(pin_ledVerde, LOW);
+    digitalWrite(pin_ledAmarelo, LOW);
+    digitalWrite(pin_ledVermelho, LOW);
+    digitalWrite(pin_ledRosa, LOW);
+    digitalWrite(pin_ledLaranja, HIGH);
+  }
+
+  delay(200);
+}
